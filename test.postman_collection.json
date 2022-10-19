@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "95341f11-b9f3-4e9e-96d8-d2981eeb2e60",
+		"name": "dans multipro test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18209770"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"user\",\n  \"password\": \"1234\",\n  \"email\": \"user@maill.com\",\n  \"mobile\": \"9856683254\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic bW9iaWxlOndpZHlh",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"user\",\n  \"password\": \"1234\",\n  \"email\": \"user@maill.com\",\n  \"mobile\": \"9856683254\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/oauth/token?username=user&password=1234&grant_type=password",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user"
+						},
+						{
+							"key": "password",
+							"value": "1234"
+						},
+						{
+							"key": "grant_type",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get list jobs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjYxNTA1OTEsInVzZXJfbmFtZSI6InVzZXIiLCJqdGkiOiI3Y2Q0NThhNC1lNjIyLTRjYmYtYmIyYi0zMWI5MTYwMTQ1MmMiLCJjbGllbnRfaWQiOiJtb2JpbGUiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.8uuVfwtJHamUK8UmTagw2-X5SMHC18YzPiAxfWMpIbQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/jobs",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get job by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjYxNTA1OTEsInVzZXJfbmFtZSI6InVzZXIiLCJqdGkiOiI3Y2Q0NThhNC1lNjIyLTRjYmYtYmIyYi0zMWI5MTYwMTQ1MmMiLCJjbGllbnRfaWQiOiJtb2JpbGUiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.8uuVfwtJHamUK8UmTagw2-X5SMHC18YzPiAxfWMpIbQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/job/32bf67e5-4971-47ce-985c-44b6b3860cdb",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"job",
+						"32bf67e5-4971-47ce-985c-44b6b3860cdb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
